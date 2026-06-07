@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap');
+
 :root {
 	--url-unvisited: rgb(140, 140, 255);
 	--url-visited: hsl(from var(--url-unvisited) h 30% 70%);
@@ -25,6 +27,16 @@ main {
 	background-color: black;
 }
 
+@media screen and (max-width: 767px) {
+	main.article::before {
+		content: "NOTE: This article is best viewed on dektop, specifically in chrome. The several interactive code demos will not function properly on mobile.";
+		font-weight: bold;
+		color: red;
+		margin-bottom: 1lh;
+		display: block;
+	}
+}
+
 :link {
 	color: var(--url-unvisited);
 }
@@ -46,9 +58,12 @@ header h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: cursive;
+	font-family: "Charm", cursive;
 	font-weight: 900;
 	color: var(--highlight)
+}
+h3 {
+	font-size: 1.31em;
 }
 
 .todo {
