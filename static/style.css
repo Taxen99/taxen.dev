@@ -1,0 +1,200 @@
+:root {
+	--url-unvisited: rgb(140, 140, 255);
+	--url-visited: hsl(from var(--url-unvisited) h 30% 70%);
+	--highlight: rgb(243, 206, 248);
+}
+
+* {
+	box-sizing: border-box;
+	scrollbar-color: var(--highlight) black;
+}
+
+body {
+	background-color: #10061a;
+	color: aliceblue;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	border: 1px solid white;
+	width: min(90vw, 1000px);
+	margin: 20px;
+	padding: 20px;
+	background-color: black;
+}
+
+:link {
+	color: var(--url-unvisited);
+}
+:visited {
+	color: var(--url-visited);
+}
+header a:any-link {
+	color: var(--url-unvisited);
+}
+a:active {
+	color: red;
+}
+header p {
+	color: white;
+	font-style: italic;
+}
+header h1 {
+	font-size: 2.3em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: cursive;
+	font-weight: 900;
+	color: var(--highlight)
+}
+
+.todo {
+	background-color: rgb(255, 225, 0);
+	color: rgb(173, 135, 213);
+}
+
+/* img {
+	outline: 1px solid red;
+}
+p {
+	background-color: blue;
+} */
+
+code {
+	white-space: pre-wrap;
+	border-radius: 5px;
+	overflow-wrap: anywhere;
+}
+
+.hljs.hljs {
+	color: #b5b1bc;
+}
+
+.language-none {
+	background: #19171c;
+	padding: 3px 5px;
+	color: #b5b1bc;
+}
+
+pre {
+	overflow-wrap: anywhere;
+	white-space: pre-wrap;
+}
+
+
+/* AAAAAA demos */
+
+.demo {
+	background-color: rgb(0, 0, 0);
+	display: flex;
+	outline: 1px solid white;
+	padding: 0.2em;
+}
+
+.demo-main {
+	flex-grow: 1;
+	display: flex;
+	/* gap: 1px;
+	background-color: white; */
+}
+
+.demo-output-panel {
+	min-width: 0;
+	position: relative;
+}
+
+.demo-output-panel-fucking-container {
+	position: absolute;
+	inset: 0;
+	overflow: scroll;
+}
+
+.demo-code-panel, .demo-output-panel {
+	display: flex;
+	flex: 1;
+}
+
+.demo-code-panel {
+	flex-direction: column;
+	border-right: 1px solid white;
+}
+
+.demo-topbar {
+	background-color: #10061a;
+	display: flex;
+	gap: 2em;
+	padding: 0 1em;
+}
+
+.demo-topbar button {
+	border: none;
+	background: none;
+	color: white;
+}
+
+.demo-topbar button:hover {
+	border-bottom: 2px solid rgb(from var(--highlight) r g b / 0.3);
+}
+
+.demo-topbar button.selected {
+	border-bottom: 2px solid var(--highlight);
+}
+
+.demo-code {
+	background-color: white;
+	flex-grow: 1;
+}
+
+.demo-code > div {
+	display: none;
+	position: relative;
+	z-index: 0;
+}
+.demo-code :is(.demo-highlight, textarea) {
+	margin: 0;
+	padding: 0.5em;
+	min-height: 20lh;
+	overflow: scroll;
+	font-family: monospace;
+	white-space: pre;
+	/* white-space: pre-wrap; */
+	/* overflow-wrap: anywhere; */
+	/* TODO: we want this, but it stops us from scrolling the page when hovering this element, which is unfortunate! */
+	/* overscroll-behavior: none; */
+}
+.demo-code textarea {
+	border: none;
+	resize: none;
+	background: transparent;
+	outline: none;
+	font-size: 1em;
+	width: 100%;
+	height: 100%;
+	color: transparent;
+	caret-color: var(--highlight);
+}
+
+.demo-code > div.selected {
+	display: flex;
+}
+
+.demo-code > :is(.demo-highlight, textarea):focus {
+	outline: none;
+}
+
+.demo-code .demo-highlight {
+	position: absolute;
+	pointer-events: none;
+	z-index: -1;
+	inset: 0;
+	/* background: transparent; */
+	/* white-space: pre-wrap; */
+	scrollbar-width: none;
+}
+
+.footnotes {
+	transform: translateX(-5px);
+}
