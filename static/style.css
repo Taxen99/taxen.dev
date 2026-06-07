@@ -29,7 +29,7 @@ main {
 
 @media screen and (max-width: 767px) {
 	main.article::before {
-		content: "NOTE: This article is best viewed on dektop, specifically in chrome. The several interactive code demos will not function properly on mobile.";
+		content: "NOTE: This article is best viewed on desktop, specifically in chrome. The several interactive code demos will not function properly on mobile.";
 		font-weight: bold;
 		color: red;
 		margin-bottom: 1lh;
